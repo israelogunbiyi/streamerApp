@@ -22,7 +22,6 @@
   color: inherit;
 }
 
-  /* ---------- top nav ---------- */
   .topnav{display:flex; justify-content:center; margin-bottom:44px;}
   .topnav-inner{display:flex; gap:4px; background:var(--bg-panel); border:1px solid var(--border); border-radius:999px; padding:6px;}
   .topnav-inner{
@@ -37,15 +36,13 @@
   border:none; background:transparent; color:var(--text-secondary);
   font-family:var(--font-body); font-size:14.5px; font-weight:600; cursor:pointer;
   transition:background .15s, color .15s;
-  white-space:nowrap;   /* keeps "TV Shows" on one line */
-  flex-shrink:0;        /* stops flexbox from squishing it */
+  white-space:nowrap;   
+  flex-shrink:0;        
 }
   .navitem svg{width:17px; height:17px; flex-shrink:0;}
   .navitem:hover{color:var(--text-primary);}
   .navitem:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
   .navitem.active{background:var(--text-primary); color:#111;}
-
-  /* ---------- screens ---------- */
 
   .screen{display:block; animation:fade .25s ease;}
   @keyframes fade{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
@@ -54,17 +51,16 @@
   h2.row-title{font-family:var(--font-display); font-weight:800; font-size:19px; margin:0 0 16px; letter-spacing:.2px;}
   .section-block{margin-bottom:40px;}
 
-  /* ---------- hero (home) ---------- */
+
   .hero{position:relative; height:340px; border-radius:16px; overflow:hidden; margin-bottom:44px; display:flex; align-items:flex-end; background:
     linear-gradient(100deg,#3a2411 0%,#1b1408 55%,#0e0f13 100%);
     border:1px solid var(--border);
   }
-  /* .hero::before{content:""; position:absolute; inset:0; background:
-    radial-gradient(circle at 78% 30%, rgba(242,163,64,.35), transparent 55%);} */
+
   .hero-content{position:relative; padding:36px 40px; max-width:560px;}
   .hero-eyebrow{color:var(--accent); font-size:12.5px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px;}
   .hero-title{font-family:var(--font-display); font-weight:800; font-size:36px; line-height:1.05; margin-bottom:12px;}
-  .hero-desc{color:var(--text-secondary); font-size:14.5px; line-height:1.55; margin-bottom:20px;}
+  .hero-desc{color:var(--bg-app); font-size:14.5px; line-height:1.55; font-weight: bold; margin-bottom:20px;}
   .hero-actions{display:flex; gap:10px;}
   .btn{border:none; border-radius:8px; font-family:var(--font-body); font-weight:600; font-size:14px; padding:11px 22px; cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:transform .12s, background .15s;}
   .btn:active{transform:scale(.97);}
@@ -73,7 +69,6 @@
   .btn-ghost{background:rgba(255,255,255,.08); color:var(--text-primary); border:1px solid rgba(255,255,255,.14);}
   .btn-ghost:hover{background:rgba(255,255,255,.14);}
 
-  /* ---------- poster rows ---------- */
   .poster-row{display:flex; gap:16px; overflow-x:auto; padding-bottom:8px; scrollbar-width:none;}
   .poster-row::-webkit-scrollbar{height:6px;}
   .poster-row::-webkit-scrollbar-thumb{background:var(--border); border-radius:3px;}
@@ -88,7 +83,7 @@
   .poster-label .t{font-size:12.5px; font-weight:600; line-height:1.25;}
   .poster-label .g{font-size:10.5px; color:var(--text-secondary); margin-top:2px;}
 
-  /* genre art fills */
+
   .g-drama{background:linear-gradient(150deg,#1c2e52,#0d1424);}
   .g-comedy{background:linear-gradient(150deg,#5c4a12,#2a2107);}
   .g-scifi{background:linear-gradient(150deg,#12403f,#0a1f22);}
@@ -100,19 +95,17 @@
   .g-reality{background:linear-gradient(150deg,#4a2818,#1f0f09);}
   .g-anime{background:linear-gradient(150deg,#2f1c4a,#130a1f);}
 
-  /* ---------- chips (genre filters) ---------- */
+
   .chip-row{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px;}
   .chip{background:var(--bg-panel); border:1px solid var(--border); color:var(--text-secondary); font-size:13px; font-weight:600; padding:8px 16px; border-radius:999px; cursor:pointer; transition:.15s;}
   .chip:hover{color:var(--text-primary); border-color:var(--text-muted);}
   .chip.active{background:var(--accent); color:#1a1204; border-color:var(--accent);}
 
-  /* ---------- favorites grid ---------- */
   .fav-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(152px,1fr)); gap:18px;}
   .fav-empty{text-align:center; padding:70px 20px; border:1px dashed var(--border); border-radius:14px; color:var(--text-secondary);}
   .fav-empty svg{width:40px; height:40px; stroke:var(--text-muted); margin-bottom:14px;}
   .fav-empty h3{font-family:var(--font-display); font-size:17px; color:var(--text-primary); margin-bottom:6px;}
 
-  /* ---------- search ---------- */
   .search-wrap{max-width:760px; margin:0 auto;}
   .search-box{display:flex; align-items:center; gap:12px; background:var(--bg-panel); border:1.5px solid var(--border); border-radius:12px; padding:16px 20px; margin-bottom:22px; transition:border-color .15s;}
   .search-box.focused{border-color:var(--accent);}
@@ -129,7 +122,7 @@
   .search-results-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(152px,1fr)); gap:16px;}
   .no-results{color:var(--text-muted); font-size:14px; padding:20px 0;}
 
-  /* ---------- settings ---------- */
+
   .settings-wrap{max-width:680px; margin:0 auto;}
   .settings-group{margin-bottom:30px;}
   .settings-group-label{font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px; padding-left:4px;}

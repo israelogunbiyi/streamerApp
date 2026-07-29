@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { movieContext } from "../context/createMovieContext";
 import Button from "./Button";
 
-
 const GENRE_MAP = {
   action: 28,
   drama: 18,
@@ -118,7 +117,9 @@ function Movies() {
         <h2 className="row-title">Critically acclaimed</h2>
         <div className="poster-row" id="row-movies-acclaimed">
           {filteredAcclaim.length === 0 ? (
-            <p className="empty-state">No critically acclaimed titles in this genre.</p>
+            <p className="empty-state">
+              No critically acclaimed titles in this genre.
+            </p>
           ) : (
             filteredAcclaim.map((critic) => (
               <div key={critic.id} className="poster g-action" tabIndex="0">

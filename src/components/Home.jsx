@@ -3,16 +3,26 @@ import { movieContext } from "../context/createMovieContext";
 import Button from "./Button";
 
 function Home() {
-  const { trends, favorites, featuredFilm, addToFavorites, tvShows, currentWatchs } =
-    useContext(movieContext);
-    console.log(featuredFilm)
+  const {
+    trends,
+    favorites,
+    featuredFilm,
+    addToFavorites,
+    tvShows,
+    currentWatchs,
+  } = useContext(movieContext);
+  console.log(featuredFilm);
 
   return (
     <section className="screen active" id="home">
       <div
         className="hero"
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/w500${featuredFilm?.backdrop_path})`,
+          backgroundImage: `url(${
+            featuredFilm?.backdrop_path
+              ? `https://image.tmdb.org/t/p/w500${featuredFilm.backdrop_path}`
+              : "/odyssey.jpeg"
+          })`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -20,8 +30,13 @@ function Home() {
       >
         <div className="hero-content">
           <div className="hero-eyebrow">Featured today</div>
-          <div className="hero-title">{featuredFilm?.title}</div>
-          <p className="hero-desc">{featuredFilm?.overview}</p>
+          <div className="hero-title">
+            {featuredFilm?.title || "The Odyssey"}
+          </div>
+          <p className="hero-desc">
+            {featuredFilm?.overview ||
+              "After the Trojan War, Odysseus faces a dangerous voyage back to Ithaca, meeting creatures like the Cyclops Polyphemus, Sirens, and Calypso along the way."}
+          </p>
           <div className="hero-actions">
             <button key={featuredFilm?.id} className="btn btn-primary">
               <svg
@@ -106,9 +121,8 @@ function Home() {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-                
               ></div>
-                <span className="poster-badge">Resume</span>
+              <span className="poster-badge">Resume</span>
               <Button
                 isFavorite={favorites.some((f) => f.id === current.id)}
                 onClick={() => addToFavorites(current)}
