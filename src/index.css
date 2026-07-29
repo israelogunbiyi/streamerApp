@@ -32,7 +32,14 @@
   /* Hide scrollbar for IE & Edge */
   -ms-overflow-style: none;
   }
-  .navitem{display:flex; align-items:center; gap:8px; padding:11px 20px; border-radius:999px; border:none; background:transparent; color:var(--text-secondary); font-family:var(--font-body); font-size:14.5px; font-weight:600; cursor:pointer; transition:background .15s, color .15s;}
+  .navitem{
+  display:flex; align-items:center; gap:8px; padding:11px 20px; border-radius:999px;
+  border:none; background:transparent; color:var(--text-secondary);
+  font-family:var(--font-body); font-size:14.5px; font-weight:600; cursor:pointer;
+  transition:background .15s, color .15s;
+  white-space:nowrap;   /* keeps "TV Shows" on one line */
+  flex-shrink:0;        /* stops flexbox from squishing it */
+}
   .navitem svg{width:17px; height:17px; flex-shrink:0;}
   .navitem:hover{color:var(--text-primary);}
   .navitem:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
