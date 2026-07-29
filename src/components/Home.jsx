@@ -21,7 +21,7 @@ function Home() {
           backgroundImage: `url(${
             featuredFilm?.backdrop_path
               ? `https://image.tmdb.org/t/p/w500${featuredFilm.backdrop_path}`
-              : "/public/fallback-hero.png"
+              : "/fallback-hero.png"
           })`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
