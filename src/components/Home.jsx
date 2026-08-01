@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { movieContext } from "../context/createMovieContext";
 import Button from "./Button";
 
+
 function Home() {
   const {
     trends,
@@ -68,7 +69,7 @@ function Home() {
                   backgroundPosition: "top",
                 }}
               ></div>
-
+                
               <Button
                 isFavorite={favorites.some((f) => f.id === trend.id)}
                 onClick={() => addToFavorites(trend)}

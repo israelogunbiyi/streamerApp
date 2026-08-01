@@ -11,16 +11,16 @@ function Search() {
   const [recentlySearch, setRecentlySearch] = useState([]);
 
   const handleSearch = (value) => {
-    setSearch(value);
-    if (value.trim() === " ") return;
+  setSearch(value);
+  if (value.trim() === "") return;   
 
-    setRecentlySearch((prev) => {
-      const filtered = prev.filter(
-        (item) => item.toLowerCase() !== value.toLowerCase(),
-      );
-      return [value, ...filtered].slice(0, 5);
-    });
-  };
+  setRecentlySearch((prev) => {
+    const filtered = prev.filter(
+      (item) => item.toLowerCase() !== value.toLowerCase(),
+    );
+    return [value, ...filtered].slice(0, 5);
+  });
+};
 
   const filteredMovies = combined.filter((movie) => {
     const title = movie.title || movie.name || "";
@@ -69,7 +69,11 @@ function Search() {
           </h2>
           <div className="recent-row" id="recent-row">
             {recentlySearch.map((item, index) => (
-              <button key={index} class="chip" data-recent="Ashfall">
+              <button
+                key={index}
+                className="chip"
+                onClick={() => handleSearch(item)}
+              >
                 {item}
               </button>
             ))}
